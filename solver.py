@@ -1,5 +1,7 @@
+from typing import List
+
 class Solver:
-    def __init__(self, grid):
+    def __init__(self, grid: List[List[int]]):
         self.n = 9
         self.grid = grid
         self.rows = [set() for x in range(self.n)]
@@ -17,21 +19,21 @@ class Solver:
                 self.cols[j].add(val)
                 self.box[i//3][j//3].add(val)
 
-    def find_empty(self):
+    def find_empty(self) -> List[int]:
         for i in range(self.n):
             for j in range(self.n):
                 if self.grid[i][j] == 0:
                     return (i, j)
-        return (-1, -1)
+        return [-1, -1]
 
-    def isvalid(self, x, y, val):
+    def isvalid(self, x: int, y: int, val: int) -> bool:
         return not (val in self.rows[x] or val in self.cols[y] or val in self.box[x//3][y//3])
 
     #Trying to fill the board
-    def solve(self): 
+    def solve(self) -> bool: 
         x, y = self.find_empty()
 
-        if (x, y) == (-1, -1):
+        if [x, y] == [-1, -1]:
             return True
         
         for val in range(1, 10):
@@ -51,6 +53,6 @@ class Solver:
         
         return False
     
-    def get_solution(self):
+    def get_solution(self) -> List[List[int]]:
         self.solve()
         return self.grid

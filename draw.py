@@ -1,6 +1,6 @@
 import pygame as pg
 from tools import cols
-from typing import List, Optional
+from typing import List
 
 class Drawer:
     def __init__(self, screen):
