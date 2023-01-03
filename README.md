@@ -21,4 +21,4 @@
  
  * solver.py Solver(grid), grid - заданная сетка
  
-  ![image](https://user-images.githubusercontent.com/111375726/210335984-eafcf8cc-24f9-404d-8726-94882463672e.png)
+  ![image](https://user-images.githubusercontent.com/111375726/210337017-7a1a562a-87b5-4642-bf72-bc43dceefade.png)
