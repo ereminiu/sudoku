@@ -13,7 +13,7 @@
   
     ![image](https://user-images.githubusercontent.com/111375726/210333908-55af0942-b81d-4c0b-9f2e-9bba9ea5c6ab.png)
 
-* Из получившейся сетки вычеркивается N клеток (58 hard mode, 51 medium mode, >= 46 easy mode) так, чтобы получившееся судоку все еще имело решение (функия remove_cells)
+* Из получившейся сетки вычеркивается N клеток (68 hard mode, 61 medium mode, >= 46 easy mode) так, чтобы получившееся судоку все еще имело решение (функия remove_cells)
    
     ![image](https://user-images.githubusercontent.com/111375726/210335217-2c74bae5-b5df-49c4-a8b7-a9c6ea6e7ff7.png)
 
