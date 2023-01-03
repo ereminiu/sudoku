@@ -7,6 +7,7 @@ import checkers
 import solver
 
 pg.init()
+pg.display.set_caption('Sudoku Solver')
 
 screen = pg.display.set_mode((600, 400))
 screen.fill(cols['white'])
@@ -17,7 +18,7 @@ drawer = draw.Drawer(screen)
 #draw game field
 drawer.draw_tiles()
 
-drawer.draw_text('Press Space to show solution')
+drawer.draw_text('Press Space to show solution', x=140, y=310, color='purple')
 
 #generate random sudoku grid
 grid = gen.GridGenerator().get_grid()

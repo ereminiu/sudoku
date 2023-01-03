@@ -7,12 +7,12 @@ class GridGenerator:
         self.grid = [[0 for x in range(self.n)] for y in range(self.n)]
         self.init_grid()
         self.shuffle()
-        #58 - for hard, 61 - medium, >= 62 - easy
-        self.remove_cells(60) 
+        #68 - for hard, 61 - medium, >= 46 - easy
+        self.remove_cells(68) 
     
     def init_grid(self):
         self.grid = [[(3*i + i//3 + j) % 9 + 1 for i in range(self.n)] for j in range(self.n)]
-        
+    
     def transpos(self):
         for i in range(self.n):
             for j in range(self.n):
@@ -50,16 +50,17 @@ class GridGenerator:
 
     def shuffle(self):
         self.transpos()
-        for it in range(30):
+        for it in range(40):
             idx = random.randint(0, 3)
-            if idx == 0:
-                self.swap_rows()
-            elif idx == 1:
-                self.swap_rows()
-            elif idx == 2:
-                self.swap_box_h()
-            else:
-                self.swap_box_v()
+            for rep in range(4):
+                if idx == 0:
+                    self.swap_rows()
+                elif idx == 1:
+                    self.swap_rows()
+                elif idx == 2:
+                    self.swap_box_h()
+                else:
+                    self.swap_box_v()
         for it in range(6):
             self.swap_rows()
 
@@ -73,7 +74,7 @@ class GridGenerator:
             return table
 
         removed = 0
-        while removed < 60:
+        while removed < emptycnt:
             i, j = random.randint(0, 8), random.randint(0, 8)
             val = self.grid[i][j]
             self.grid[i][j] = 0
